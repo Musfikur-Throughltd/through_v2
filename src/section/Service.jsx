@@ -36,11 +36,28 @@ const content = [
 const Service = () => {
   return (
     <div className="container mx-auto">
-      <p className="text-center text-[#28519A] text-3xl">OUR SERVICES </p>
-      <p className="text-center text-3xl mt-3 mb-10 font-thin">
+      <div
+        style={{
+          textAlign: "center",
+          color: "#28519A",
+          fontSize: "30px",
+          fontFamily: "Raleway",
+          fontWeight: "600",
+        }}
+      >
+        OUR SERVICES{" "}
+      </div>{" "}
+      <div
+        style={{
+          textAlign: "center",
+          color: "#1C1C1C",
+          fontSize: "30px",
+          fontFamily: "Raleway",
+          marginBottom: "50px",
+        }}
+      >
         We Focus On Making The Best In All Sectors
-      </p>
-
+      </div>
       <div className="grid grid-cols-3 gap-4">
         {content.map((cont, i) => (
           <div
@@ -48,8 +65,30 @@ const Service = () => {
             className="border p-5 rounded-md text-[#28519A] hover:bg-[#28519A] hover:text-white transition-all ease-in-out duration-600"
           >
             <img src={cont.icon} alt={cont.icon} />
-            <p className="text-2xl font-semibold my-3">{cont.headline}</p>
-            <p className="font-light"> {cont.text} </p>
+            <div
+              style={{
+                fontSize: "22px",
+                fontFamily: "Montserrat",
+                fontWeight: "600",
+                textTransform: "capitalize",
+                lineHeight: "32px",
+                wordWrap: "break-word",
+              }}
+            >
+              {cont.headline}{" "}
+            </div>
+            <div
+              style={{
+                width: "100%",
+                fontSize: "18px",
+                fontFamily: "Sofia Pro",
+                fontWeight: "400",
+                lineHeight: "26px",
+                wordWrap: "break-word",
+              }}
+            >
+              {cont.text}{" "}
+            </div>
           </div>
         ))}
       </div>
