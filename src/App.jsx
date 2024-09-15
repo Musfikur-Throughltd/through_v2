@@ -5,6 +5,7 @@ import Hero from "./section/Hero";
 import Navbar from "./section/Navbar";
 import Newsletter from "./section/Newsletter";
 import Service from "./section/Service";
+import WhyThrough from "./section/WhyThrough";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
     <Hero/>
     <AboutUs/>
       <Service />
+      <WhyThrough/>
       <ContactUs/>
       <Newsletter />
       <Footer />

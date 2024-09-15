@@ -3,7 +3,7 @@ import icon from '../../public/Frame.png'
 import Button from '../components/Button';
 const AboutUs = () => {
     return (
-        <div id='aboutUs' className="max-w-screen-xl mx-auto mb-20">
+        <div id='aboutUs' className="max-w-screen-xl mx-auto mb-32">
 
             <div className="flex  justify-between flex-col lg:flex-row md:flex-col">
                 <div className='lg:w-[500px] lg:ml-12 lg:mt-20'>
