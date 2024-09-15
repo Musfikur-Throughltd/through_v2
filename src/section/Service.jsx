@@ -35,7 +35,7 @@ const content = [
 
 const Service = () => {
   return (
-    <div className="container mx-auto">
+    <div id="services" className="max-w-screen-xl mx-auto mb-20">
       <div
         style={{
           textAlign: "center",
