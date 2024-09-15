@@ -35,6 +35,27 @@ const content = [
 
 const Service = () => {
   return (
+    <div id="services" className="max-w-screen-xl mx-auto mb-44">
+      <div
+        style={{
+          textAlign: "center",
+          color: "#28519A",
+          fontSize: "30px",
+          fontFamily: "Raleway",
+          fontWeight: "600",
+        }}
+      >
+        OUR SERVICES{" "}
+      </div>{" "}
+      <div
+        style={{
+          textAlign: "center",
+          color: "#1C1C1C",
+          fontSize: "30px",
+          fontFamily: "Raleway",
+          marginBottom: "50px",
+        }}
+      >
     <div id="services" className="max-w-screen-xl mx-auto mb-20 px-4">
       <div className="text-3xl text-center text-blue-900 font-semibold">
         OUR SERVICES
