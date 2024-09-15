@@ -35,60 +35,28 @@ const content = [
 
 const Service = () => {
   return (
-    <div id="services" className="max-w-screen-xl mx-auto mb-20">
-      <div
-        style={{
-          textAlign: "center",
-          color: "#28519A",
-          fontSize: "30px",
-          fontFamily: "Raleway",
-          fontWeight: "600",
-        }}
-      >
-        OUR SERVICES{" "}
-      </div>{" "}
-      <div
-        style={{
-          textAlign: "center",
-          color: "#1C1C1C",
-          fontSize: "30px",
-          fontFamily: "Raleway",
-          marginBottom: "50px",
-        }}
-      >
+    <div id="services" className="max-w-screen-xl mx-auto mb-20 px-4">
+      <div className="text-3xl text-center text-blue-900 font-semibold">
+        OUR SERVICES
+      </div>
+      <div className="w-full max-w-3xl mx-auto mt-3 mb-10 text-center text-gray-500 text-lg font-normal leading-7">
         We Focus On Making The Best In All Sectors
       </div>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {content.map((cont, i) => (
           <div
             key={i}
-            className="border p-5 rounded-md text-[#28519A] hover:bg-[#28519A] hover:text-white transition-all ease-in-out duration-600"
+            className="border p-5 rounded-md text-blue-900 hover:bg-blue-900 hover:text-white transition-all ease-in-out duration-300"
           >
-            <img src={cont.icon} alt={cont.icon} />
-            <div
-              style={{
-                fontSize: "22px",
-                fontFamily: "Montserrat",
-                fontWeight: "600",
-                textTransform: "capitalize",
-                lineHeight: "32px",
-                wordWrap: "break-word",
-              }}
-            >
-              {cont.headline}{" "}
+            <img
+              src={cont.icon}
+              alt={cont.headline}
+              className="w-16 h-16 mx-auto mb-4"
+            />
+            <div className="text-lg font-semibold capitalize mb-2">
+              {cont.headline}
             </div>
-            <div
-              style={{
-                width: "100%",
-                fontSize: "18px",
-                fontFamily: "Sofia Pro",
-                fontWeight: "400",
-                lineHeight: "26px",
-                wordWrap: "break-word",
-              }}
-            >
-              {cont.text}{" "}
-            </div>
+            <div className="text-base ">{cont.text}</div>
           </div>
         ))}
       </div>
