@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 
 const PopUpForm = () => {
@@ -78,20 +77,11 @@ const PopUpForm = () => {
   };
 
   return (
-
-    <div className="w-[682px]  px-[40px] mx-auto bg-white">
-      <h1 className="text-[#28519A] font-bold text-[22px]">STEP 01</h1>
-      <p className="text-[36px] font-bold">Let’s Talk</p>
-      <p className="text-[12px]">
-        Have some big idea or brand to develop and need help? Then reach out
-        we'd love to hear about your project and provide help
-
     <div className="w-full max-w-3xl mx-auto px-4 py-8 bg-white shadow-lg rounded-lg">
       <h1 className="text-2xl font-bold mb-4">Let’s Talk</h1>
       <p className="text-sm mb-6">
         Have a big idea or brand to develop and need help? Reach out—we'd love
         to hear about your project and provide assistance.
-
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -147,7 +137,7 @@ const PopUpForm = () => {
         </div>
 
         {/* Job Title and Company Name */}
-        <div className="flex flex-col md:flex-row gap-4">
+        <div className="flex gap-4">
           <div className="flex-1 flex flex-col gap-2">
             <label htmlFor="jobTitle" className="font-medium">
               Job Title
@@ -351,11 +341,7 @@ const PopUpForm = () => {
         {/* Submit Button */}
         <button
           type="submit"
-
-          className="bg-[#28519A] w-full rounded-md py-3 text-white mb-6"
-
           className="bg-[#28519A] w-full py-3 rounded-md text-white font-semibold hover:bg-blue-800 transition-colors duration-300"
-
         >
           SUBMIT
         </button>

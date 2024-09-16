@@ -10,9 +10,7 @@ const Newsletter = () => {
         Apparently we had reached a great height in the atmosphere, for the sky
         was a dead black, and the stars had.
       </p>
-      <div className="w-full max-w-md px-4">
-        <Email />
-      </div>
+      <Email />
     </div>
   );
 };
