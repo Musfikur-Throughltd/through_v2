@@ -36,7 +36,7 @@ const ContactUs = () => {
                             <img className='mt-2 w-[34px] h-[34px]' src={gmail} alt="Email Icon" />
                             <span className="text-xl font-medium">
                                 Email Us
-                                <p className="text-[16px] font-normal text-[#777] underline">mail@throughltd.com</p>
+                                <a href="#" className='text-[16px] font-normal text-[#777] underline'>mail@throughltd.com</a>
                             </span>
                         </div>
                     </div>
