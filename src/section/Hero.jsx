@@ -8,7 +8,16 @@ const Hero = () => {
     <div className="max-w-screen-xl mx-auto mb-20">
       <div className=" items-center grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1  gap-56 justify-between ">
         <div className="lg:w-[680px] md:w-[680px]  w-[400px] lg:h-[620px] md:h-[420px] space-y-8 lg:pt-32 pt-12 md:pt-20 md:text-center text-center lg:text-start ml-8">
-          <h1 className="lg:text-4xl md:text-5xl text-3xl font-semibold  -mt-7 lg:leading-[45px]">Advancing <span className="text-[#28519A]">Businesses and <br /> Individuals</span> with <br /> Performance-focused <br /> solutions.</h1>
+          <h1 className="lg:text-4xl md:text-5xl text-2xl font-semibold -mt-7 lg:leading-[45px]">
+            Advancing <span className="text-[#28519A]">Businesses and 
+              <span className="hidden lg:inline"> <br /> </span>
+                {""} Individuals
+            </span> with
+            <span className="hidden md:inline"> <br /> </span>
+            Performance-focused
+            <span className="hidden md:inline"> <br /> </span>
+            solutions.
+          </h1>
           <p className="text-[#777] lg:text-[18px] md:text-[16px] text-[12px]">With a focus on excellence and a commitment to customer satisfaction, Through Limited is your ultimate partner for success. We offer a comprehensive range of services, from digital marketing to software engineering, for businesses and individuals looking to succeed in today's fast-paced market.</p>
           <Button />
 

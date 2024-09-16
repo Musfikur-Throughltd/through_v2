@@ -1,8 +1,7 @@
-import React from "react";
-
 const PopUpForm = () => {
   return (
-    <div className="w-[682px] py-[25px] px-[40px] mx-auto">
+    <div className="w-[682px]  px-[40px] mx-auto bg-white">
+      <h1 className="text-[#28519A] font-bold text-[22px]">STEP 01</h1>
       <p className="text-[36px] font-bold">Let’s Talk</p>
       <p className="text-[12px]">
         Have some big idea or brand to develop and need help? Then reach out
@@ -163,7 +162,7 @@ const PopUpForm = () => {
 
         <button
           type="submit"
-          className="bg-[#28519A] w-full rounded-md py-3 text-white"
+          className="bg-[#28519A] w-full rounded-md py-3 text-white mb-6"
         >
           SUBMIT{" "}
         </button>

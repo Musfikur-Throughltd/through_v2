@@ -1,3 +1,4 @@
+
 import AboutUs from "./section/AboutUs";
 import ContactUs from "./section/ContactUs";
 import Footer from "./section/Footer";
@@ -13,11 +14,13 @@ export default function App() {
     <Navbar/>
     <Hero/>
     <AboutUs/>
-      <Service />
+      {/* <Service />
       <WhyThrough/>
       <ContactUs/>
       <Newsletter />
-      <Footer />
+      <Footer /> */}
+
+     
     </div>
   );
 }
