@@ -11,10 +11,10 @@ const settings = {
   slidesToScroll: 1,
   arrows: false,
   adaptiveHeight: true,
-  autoplay: true,          
-  autoplaySpeed: 2000,      
+  autoplay: true,
+  autoplaySpeed: 2000,
+  cssEase: "linear",
 };
-
 
 const milestones = [
   { label: "Years of Experience", value: "04+", color: "gray-900" },
@@ -76,7 +76,7 @@ const Milestone = () => {
         </div>
 
         {/* Separator */}
-        <div className="w-16 h-px bg-blue-900 rotate-90 hidden md:block"></div>
+        <div className="w-8 h-px bg-slate-400 rotate-90 hidden md:block" />
 
         {/* Total Courses */}
         <div className="flex flex-col items-center justify-center gap-2">
@@ -90,7 +90,7 @@ const Milestone = () => {
         </div>
 
         {/* Separator */}
-        <div className="w-16 h-px bg-blue-900 rotate-90 hidden md:block"></div>
+        <div className="w-8 h-px bg-slate-400 rotate-90 hidden md:block" />
         {/* Satisfied Customers */}
         <div className="flex flex-col items-center justify-center gap-2">
           <div className="flex items-center gap-2">
@@ -103,7 +103,7 @@ const Milestone = () => {
         </div>
 
         {/* Separator */}
-        <div className="w-16 h-px bg-blue-900 rotate-90 hidden md:block"></div>
+        <div className="w-8 h-px bg-slate-400 rotate-90 hidden md:block" />
         {/* Projects Done */}
         <div className="flex flex-col items-center justify-center gap-2">
           <div className="flex items-center gap-2">

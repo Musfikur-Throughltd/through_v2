@@ -25,7 +25,7 @@ const sliderSettings = {
 
 const Service = () => {
   return (
-    <div id="services" className="max-w-screen-xl mx-auto mb-48 px-4">
+    <div id="services" className="max-w-screen-xl mx-auto mb-8 lg:mb-48 px-4">
       {/* Title */}
       <div className="text-3xl text-center text-blue-900 font-semibold">
         OUR SERVICES

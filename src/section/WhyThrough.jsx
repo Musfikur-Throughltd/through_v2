@@ -1,18 +1,18 @@
 import React from "react";
-import Frame2 from "../../public/Frame 2.png";
-import Frame3 from "../../public/1678637136_en-idei-club-p-travel-agency-office-design-krasivo-5 1.png";
-import Icon1 from "../../public/why-icon1 (1).png";
-import Icon2 from "../../public/why-icon1 (2).png";
-import Icon3 from "../../public/why-icon1 (3).png";
-import watch from "../../public/watch.png";
+import Frame2 from "/Frame 2.png";
+import Frame3 from "/1678637136_en-idei-club-p-travel-agency-office-design-krasivo-5 1.png";
+import Icon1 from "/profile.png";
+import Icon2 from "/check.png";
+import Icon3 from "/continuous.png";
+import watch from "/watch.png";
 
 const WhyThrough = () => {
   return (
     <div className="max-w-screen-xl mx-auto px-4">
-      <div className="flex flex-col lg:flex-row gap-12">
-        <div className="flex flex-col gap-6">
+      <div className="flex flex-col lg:flex-row gap-12 items-center">
+        <div className="flex-1">
           <img
-            className="w-full hidden lg:block lg:w-[485px]  "
+            className="w-full hidden lg:block lg:w-[485px] mb-6"
             src={Frame2}
             alt="Decorative frame"
           />
@@ -67,7 +67,7 @@ const WhyThrough = () => {
             ].map((item, index) => (
               <div key={index} className="flex gap-5 items-start">
                 <img
-                  className="w-[54px] h-[54px] mt-1"
+                  className="w-[48px] h-[48px] mt-1"
                   src={item.icon}
                   alt={`Icon for ${item.title}`}
                 />

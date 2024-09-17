@@ -77,7 +77,7 @@ const PopUpForm = () => {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto px-4 py-8 bg-white shadow-lg rounded-lg">
+    <div className="w-full max-w-3xl mx-auto px-4 py-8 bg-white shadow-lg rounded-lg z-50">
       <h1 className="text-2xl font-bold mb-4">Let’s Talk</h1>
       <p className="text-sm mb-6">
         Have a big idea or brand to develop and need help? Reach out—we'd love

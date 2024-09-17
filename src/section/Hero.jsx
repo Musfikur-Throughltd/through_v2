@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Rectangle1 from "../../public/Rectangle 24.png";
-import Rectangle2 from "../../public/Rectangle 25.png";
-import Rectangle3 from "../../public/Rectangle 26.png";
-import Rectangle4 from "../../public/Rectangle 27.png";
+import Rectangle1 from "/Rectangle 24.png";
+import Rectangle2 from "/Rectangle 25.png";
+import Rectangle3 from "/Rectangle 26.png";
+import Rectangle4 from "/Rectangle 27.png";
 import Button from "../components/Button";
 
 const Hero = () => {
@@ -32,29 +32,35 @@ const Hero = () => {
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         {/* Text Section */}
         <div className="space-y-7 lg:pt-0 md:pt-20 pt-12 text-center lg:text-left">
-          <h1 style={{ fontFamily: "Montserrat" }} className="text-xl lg:text-4xl md:text-3xl font-semibold leading-normal">
+          <h1
+            style={{ fontFamily: "Montserrat" }}
+            className="text-xl lg:text-4xl md:text-3xl font-semibold leading-normal"
+          >
             Advancing{" "}
             <span className="text-[#28519A]">
-              Businesses and
-              <span className="lg:inline hidden">
+              Businesses and{" "}
+              {/* <span className="lg:inline hidden">
                 {" "}
                 <br />{" "}
-              </span>
+              </span> */}
               Individuals
             </span>{" "}
-            with
-            <span className="md:inline hidden">
+            with{" "}
+            {/* <span className="md:inline hidden">
               {" "}
               <br />{" "}
-            </span>
-            Performance-focused
-            <span className="md:inline hidden">
+            </span> */}
+            Performance-focused{" "}
+            {/* <span className="md:inline hidden">
               {" "}
               <br />{" "}
-            </span>
+            </span> */}
             solutions.
           </h1>
-          <p style={{ fontFamily: "Sofia Pro" }} className="text-[#777] text-sm sm:text-base lg:w-[460px] md:text-md lg:text-[16px] leading-6">
+          <p
+            style={{ fontFamily: "Sofia Pro" }}
+            className="text-[#777] text-sm sm:text-base lg:w-[460px] md:text-md lg:text-[16px] leading-6"
+          >
             With a focus on excellence and a commitment to customer
             satisfaction, Through Limited is your ultimate partner for success.
             We offer a comprehensive range of services, from digital marketing
@@ -66,9 +72,9 @@ const Hero = () => {
 
         {/* Image Section with Carousel for Mobile */}
         <div className="lg:hidden relative">
-          <div className="w-full h-[700px] overflow-hidden"> 
+          <div className="w-full h-[700px] overflow-hidden">
             <img
-              className="w-full h-full object-cover" 
+              className="w-full h-full object-cover"
               src={images[currentImage].src}
               alt={images[currentImage].alt}
             />
