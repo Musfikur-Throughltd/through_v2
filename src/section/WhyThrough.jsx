@@ -12,19 +12,19 @@ const WhyThrough = () => {
       <div className="flex flex-col lg:flex-row gap-12">
         <div className="flex flex-col gap-6">
           <img
-            className="w-full hidden lg:block lg:w-[485px]"
+            className="w-full hidden lg:block lg:w-[485px]  "
             src={Frame2}
             alt="Decorative frame"
           />
           <div className="relative w-full hidden lg:block lg:w-[485px] h-[204px]">
             <div className="absolute inset-0 bg-black bg-opacity-60 rounded-[30px]"></div>
             <img
-              className="w-full h-[204px] rounded-[30px]"
+              className="w-full h-[204px] rounded-[30px] "
               src={Frame3}
               alt="Office design with a decorative overlay"
             />
             <img
-              className="absolute bottom-4 left-1/2 w-[220px] h-[38px] transform -translate-x-1/2"
+              className="absolute bottom-[70px] animate-pulse left-1/2 w-[220px] h-[38px] transform -translate-x-1/2"
               src={watch}
               alt="Watch"
             />
@@ -32,19 +32,19 @@ const WhyThrough = () => {
         </div>
 
         <div className="flex-1">
-          <div className="space-y-2 mb-8 text-center">
+          <div className="space-y-2 mb-8 lg:text-start text-center md:text-center">
             {/* Title */}
             <h2 className="text-3xl text-blue-900 font-semibold">
               Why Through Limited?
             </h2>
             {/* Subtitle */}
-            <p className="text-lg text-gray-500 mt-3 mb-10">
+            <p className="text-lg text-gray-500 pt-3 mb-10">
               Explore our range of services and let us be the catalyst for your
               growth.
             </p>
           </div>
 
-          <div className="space-y-7">
+          <div className="space-y-12">
             {[
               {
                 icon: Icon1,
@@ -78,7 +78,7 @@ const WhyThrough = () => {
                   <p className="text-sm lg:text-base text-gray-600 pb-5">
                     {item.description}
                   </p>
-                  <hr className="w-full h-[1px] border-gray-300" />
+                  <hr className="w-full py-1 h-[1px] border-gray-300" />
                 </div>
               </div>
             ))}

@@ -28,7 +28,7 @@ const AboutUs = () => {
   return (
     <div
       id="aboutUs"
-      className="max-w-screen-xl mx-auto lg:mb-32 md:mb-32 px-4 sm:px-6 lg:px-8"
+      className="max-w-screen-xl mx-auto lg:mb-32 md:mb-32 px-4 sm:px-6 lg:px-0"
     >
       <div className="flex flex-col lg:flex-row md:flex-col justify-between">
         {/* Text Section */}
@@ -101,7 +101,7 @@ const AboutUs = () => {
               {content.map((text, index) => (
                 <div
                   key={index}
-                  className="flex justify-center items-start gap-4 mb-5 shadow-xl lg:shadow-none px-5 py-5 border-2 lg:border-none rounded-xl"
+                  className="flex justify-center  items-start gap-4 mb-5 shadow-xl lg:shadow-none px-5 py-2 border-2 lg:border-none rounded-xl"
                 >
                   <img className="mt-2" src={icon} alt="Icon" />
                   <p className="text-[#777] text-base leading-[26px]">{text}</p>
@@ -117,7 +117,7 @@ const AboutUs = () => {
         </div>
 
         {/* Image Section */}
-        <div className="flex flex-col justify-center items-center mt-16 lg:px-0 md:px-0 px-5">
+        <div className="flex flex-col justify-center items-center mt-16 lg:px-0 md:px-0 px-5 lg:mr-12">
           <img
             className="hidden sm:block w-full h-auto"
             src={aboutImage}

@@ -31,8 +31,8 @@ const Hero = () => {
     <div className="max-w-screen-xl mx-auto mb-20 px-4 sm:px-6 lg:px-8">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         {/* Text Section */}
-        <div className="space-y-4 lg:pt-32 md:pt-20 pt-12 text-center lg:text-left">
-          <h1 className="text-xl lg:text-3xl font-semibold leading-tight">
+        <div className="space-y-7 lg:pt-0 md:pt-20 pt-12 text-center lg:text-left">
+          <h1 style={{ fontFamily: "Montserrat" }} className="text-xl lg:text-4xl md:text-3xl font-semibold leading-normal">
             Advancing{" "}
             <span className="text-[#28519A]">
               Businesses and
@@ -54,7 +54,7 @@ const Hero = () => {
             </span>
             solutions.
           </h1>
-          <p className="text-[#777] text-sm sm:text-base md:text-lg lg:text-xl">
+          <p style={{ fontFamily: "Sofia Pro" }} className="text-[#777] text-sm sm:text-base lg:w-[460px] md:text-md lg:text-[16px] leading-6">
             With a focus on excellence and a commitment to customer
             satisfaction, Through Limited is your ultimate partner for success.
             We offer a comprehensive range of services, from digital marketing
@@ -66,9 +66,9 @@ const Hero = () => {
 
         {/* Image Section with Carousel for Mobile */}
         <div className="lg:hidden relative">
-          <div className="w-full overflow-hidden">
+          <div className="w-full h-[700px] overflow-hidden"> 
             <img
-              className="w-full"
+              className="w-full h-full object-cover" 
               src={images[currentImage].src}
               alt={images[currentImage].alt}
             />
@@ -94,8 +94,8 @@ const Hero = () => {
         </div>
 
         {/* Grid for Desktop View */}
-        <div className="hidden  relative lg:grid grid-cols-2 gap-4 md:gap-6">
-          <img className="w-full" src={Rectangle2} alt="Rectangle 2" />
+        <div className="hidden  relative lg:grid grid-cols-2 gap-4 md:gap-8 lg:pt-12 lg:ml-12">
+          <img className="w-full " src={Rectangle2} alt="Rectangle 2" />
           <img
             className="w-full lg:mt-[-28px]"
             src={Rectangle4}
@@ -103,7 +103,7 @@ const Hero = () => {
           />
           <img className="w-full" src={Rectangle1} alt="Rectangle 1" />
           <img
-            className="w-full lg:mt-[-143px]"
+            className="w-full lg:mt-[-142px]"
             src={Rectangle3}
             alt="Rectangle 3"
           />

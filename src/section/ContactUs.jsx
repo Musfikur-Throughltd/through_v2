@@ -55,8 +55,8 @@ const ContactUs = () => {
             ))}
           </div>
         </div>
-        <div className="mt-16 lg:mt-0">
-          <img src={map} alt="Map" className="w-full max-w-md" />
+        <div className="mt-16 lg:mt-26">
+          <img src={map} alt="Map" className="w-full max-w-md h-full" />
         </div>
       </div>
     </div>
