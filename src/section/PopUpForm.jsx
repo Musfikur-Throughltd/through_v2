@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import axios from "axios";
+import { useState } from "react";
 
 const PopUpForm = () => {
-  // State to store form input values
   const [formData, setFormData] = useState({
     name: "",
     gender: "",
@@ -16,6 +16,8 @@ const PopUpForm = () => {
     meetingType: "",
   });
 
+
+
   // Handle input changes
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -25,10 +27,7 @@ const PopUpForm = () => {
         if (checked) {
           return {
             ...prevData,
-            digitalMarketingChannels: [
-              ...prevData.digitalMarketingChannels,
-              name,
-            ],
+            digitalMarketingChannels: [...prevData.digitalMarketingChannels, name],
           };
         } else {
           return {
@@ -47,34 +46,66 @@ const PopUpForm = () => {
 
   // Handle form submission
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault();
 
-    // Basic form validation (you can expand this)
-    if (!formData.name || !formData.email) {
-      alert("Please fill in your name and email");
+    // Basic form validation (expand as needed)
+    if (!formData.name || !formData.email || !formData.mobileNumber) {
+      alert("Please fill in your name, email, and mobile number");
       return;
     }
 
-    // Perform any desired action with form data (e.g., send to API)
-    console.log("Form Data Submitted:", formData);
+    // Prepare the data to send
+    const dataToSend = {
+      ...formData,
+      digitalMarketingChannels: formData.digitalMarketingChannels.join(", "), // Convert array to comma-separated string
+    };
 
-    // Clear form fields after submission (optional)
-    setFormData({
-      name: "",
-      gender: "",
-      jobTitle: "",
-      companyName: "",
-      email: "",
-      mobileNumber: "",
-      homeAddress: "",
-      challenge: "",
-      hasWebsiteOrApp: "",
-      digitalMarketingChannels: [],
-      meetingType: "",
-    });
+    // Log the formData to check what you're sending
+    console.log("Form Data being sent:", dataToSend);
 
-    alert("Form submitted successfully!");
+    // Make Axios POST request to the sheet.best API
+    axios
+      .post(
+        "https://sheet.best/api/sheets/8d82479a-e10f-40cb-bd56-f41c1ebacccf",
+        dataToSend, // Send formatted data
+        {
+          headers: {
+            "Content-Type": "application/json", // Ensures the data is sent in the correct format
+          },
+        }
+      )
+      .then((res) => {
+        console.log("Form Data Submitted:", res.data);
+        alert("Form submitted successfully!");
+
+        // Clear form fields after submission
+        setFormData({
+          name: "",
+          gender: "",
+          jobTitle: "",
+          companyName: "",
+          email: "",
+          mobileNumber: "", // Reset mobile number field correctly
+          homeAddress: "",
+          challenge: "",
+          hasWebsiteOrApp: "",
+          digitalMarketingChannels: [],
+          meetingType: "",
+        });
+      })
+      .catch((error) => {
+        // Log the actual error response from the server for more details
+        console.error("Error submitting form:", error.response?.data || error.message);
+        alert(
+          "There was an error submitting the form. Please check the form data and try again."
+        );
+      });
+
+    console.log("Mobile Number:", formData.mobileNumber);
   };
+
+
+
 
   return (
     <div className="w-full max-w-3xl mx-auto px-4 py-8 bg-white shadow-lg rounded-lg z-50">
@@ -270,69 +301,82 @@ const PopUpForm = () => {
         {/* Digital Marketing Channels */}
         <div className="flex flex-col gap-2">
           <label className="font-medium">
-            Which digital marketing channels are you currently using?
+            Which digital marketing channels are you currently using? (Check all that apply)
           </label>
           <div className="flex flex-wrap gap-4">
-            {[
-              "Facebook",
-              "LinkedIn",
-              "Instagram",
-              "YouTube",
-              "TikTok",
-              "X",
-            ].map((channel) => (
-              <div key={channel} className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  name={channel.toLowerCase()}
-                  id={channel.toLowerCase()}
-                  checked={formData.digitalMarketingChannels.includes(
-                    channel.toLowerCase()
-                  )}
-                  onChange={handleChange}
-                  className="mr-2"
-                />
-                <label htmlFor={channel.toLowerCase()} className="text-sm">
-                  {channel}
-                </label>
-              </div>
-            ))}
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                name="Google"
+                onChange={handleChange}
+                checked={formData.digitalMarketingChannels.includes("Google")}
+                className="mr-2"
+              />
+              Google
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                name="Facebook"
+                onChange={handleChange}
+                checked={formData.digitalMarketingChannels.includes("Facebook")}
+                className="mr-2"
+              />
+              Facebook
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                name="LinkedIn"
+                onChange={handleChange}
+                checked={formData.digitalMarketingChannels.includes("LinkedIn")}
+                className="mr-2"
+              />
+              LinkedIn
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                name="Instagram"
+                onChange={handleChange}
+                checked={formData.digitalMarketingChannels.includes("Instagram")}
+                className="mr-2"
+              />
+              Instagram
+            </label>
           </div>
         </div>
 
         {/* Meeting Type */}
         <div className="flex flex-col gap-2">
-          <label className="font-medium">
-            Are you looking for an online or offline meeting? Offline meetings
-            are only applicable for Dhaka, Bangladesh.
-          </label>
+          <label className="font-medium">How would you like to meet?</label>
           <div className="flex gap-4">
             <div className="flex items-center">
               <input
                 type="radio"
                 name="meetingType"
-                id="online"
-                value="online"
-                checked={formData.meetingType === "online"}
+                id="inPerson"
+                value="In-person"
+                checked={formData.meetingType === "In-person"}
                 onChange={handleChange}
                 className="mr-2"
               />
-              <label htmlFor="online" className="text-sm">
-                Online
+              <label htmlFor="inPerson" className="text-sm">
+                In Person
               </label>
             </div>
             <div className="flex items-center">
               <input
                 type="radio"
                 name="meetingType"
-                id="offline"
-                value="offline"
-                checked={formData.meetingType === "offline"}
+                id="virtual"
+                value="Virtual"
+                checked={formData.meetingType === "Virtual"}
                 onChange={handleChange}
                 className="mr-2"
               />
-              <label htmlFor="offline" className="text-sm">
-                Offline
+              <label htmlFor="virtual" className="text-sm">
+                Virtual
               </label>
             </div>
           </div>
@@ -341,9 +385,9 @@ const PopUpForm = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="bg-[#28519A] w-full py-3 rounded-md text-white font-semibold hover:bg-blue-800 transition-colors duration-300"
+          className="bg-[#28519A] w-full py-3 rounded-md text-white font-semibold hover:bg-blue-800 transition"
         >
-          SUBMIT
+          Submit
         </button>
       </form>
     </div>
