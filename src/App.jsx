@@ -1,4 +1,5 @@
 import AboutUs from "./section/AboutUs";
+import AnimationAccroding from "./section/AnimationAccroding";
 import ContactUs from "./section/ContactUs";
 import Footer from "./section/Footer";
 import Hero from "./section/Hero";
