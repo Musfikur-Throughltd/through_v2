@@ -1,3 +1,4 @@
+import AnimatedSection from "./components/AnimatedSection";
 import AboutUs from "./section/AboutUs";
 import ContactUs from "./section/ContactUs";
 import Footer from "./section/Footer";
@@ -14,6 +15,7 @@ export default function App() {
     <div className="mx-auto overflow-hidden w-full">
       <Navbar />
       <Hero />
+      {/* <AnimatedSection /> */}
       <AboutUs />
       <Service />
       <WhyThrough />

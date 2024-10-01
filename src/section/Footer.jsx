@@ -49,9 +49,9 @@ const Footer = () => {
             <div className="flex-1 lg:w-1/4 px-4 lg:px-10">
               <p className="font-semibold text-xl mb-3">Newsletter</p>
             </div>
-          </div>
-          <div className=" -mt-10">
-            <Email />
+            <div className=" -mt-10 lg:mt-0">
+              <Email />
+            </div>
           </div>
         </div>
       </div>
