@@ -15,7 +15,7 @@ export default function App() {
     <div className="mx-auto overflow-hidden w-full">
       <Navbar />
       <Hero />
-      <AnimatedSection />
+      {/* <AnimatedSection /> */}
       <AboutUs />
       <Service />
       <WhyThrough />
