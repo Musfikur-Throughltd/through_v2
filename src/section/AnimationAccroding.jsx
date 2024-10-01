@@ -1,6 +1,10 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Icon from "/Frame.png";
-const AnimationAccroding = () => {
+
+const AnimationAccroding = ({ setShowFinalTextProp }) => {
   const dataArr = [
     {
       title: "Through Limited Overview",
@@ -19,6 +23,17 @@ const AnimationAccroding = () => {
     },
   ];
 
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false,
+  };
+
   const [activeIndex, setActiveIndex] = useState(-1);
   const [showFinalText, setShowFinalText] = useState(false);
   const [hideAllAccordions, setHideAllAccordions] = useState(false);
@@ -28,9 +43,9 @@ const AnimationAccroding = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          startAccordionAnimation(); // Start animation
+          startAccordionAnimation();
         } else {
-          resetAccordion(); // Reset animation
+          resetAccordion();
         }
       },
       { threshold: 0.5 }
@@ -58,6 +73,7 @@ const AnimationAccroding = () => {
         setTimeout(() => {
           setHideAllAccordions(true);
           setShowFinalText(true);
+          setShowFinalTextProp(true); // Pass true to parent
         }, 2000);
       }
     }, 2000);
@@ -67,45 +83,38 @@ const AnimationAccroding = () => {
     setActiveIndex(-1);
     setShowFinalText(false);
     setHideAllAccordions(false);
+    setShowFinalTextProp(false); // Pass false to parent
   };
 
   return (
-    <div ref={sectionRef} className="flex w-full justify-center ">
+    <div ref={sectionRef} className="flex w-full justify-center">
       <div className="max-w-[550px] cursor-pointer space-y-6">
         {dataArr.map((data, idx) => (
           <div
             key={idx}
-            className={`flex items-center transition-all duration-500 ease-in-out ${
-              activeIndex >= idx && !hideAllAccordions
-                ? "opacity-100"
-                : "opacity-0 h-0"
-            }`}
+            className={`flex items-center transition-all duration-500 ease-in-out ${activeIndex >= idx && !hideAllAccordions ? "opacity-100" : "opacity-0 h-0"
+              }`}
           >
             <div className="flex size-16 select-none items-center justify-center rounded-md  text-2xl font-semibold text-white">
               <img className="w-8" src={Icon} alt="" />
             </div>
-
             <div className="relative h-[1px] w-10 bg-[#28519A]">
               <span className="absolute -left-2 -top-[3px] z-40 h-2 w-2 rounded-full border-2 border-zinc-700 bg-white"></span>
               <span className="h-1 w-10 bg-[#28519A]"></span>
               <span className="absolute -right-2 -top-[3px] z-40 h-2 w-2 rounded-full border-2 border-zinc-700 bg-white"></span>
             </div>
-
             <div className="text-center">
               <div className="relative max-w-[450px]  p-3 border-b ">
-                <h1 className="select-none text-xl text-[#28519A]">
-                  {data.title}
-                </h1>
+                <h1 className="select-none text-xl text-[#28519A]">{data.title}</h1>
               </div>
               <div
-                className={`grid overflow-hidden text-slate-600 transition-all shadow-xl duration-500 ease-in-out ${
-                  activeIndex >= idx && !hideAllAccordions
+                className={`grid overflow-hidden text-slate-600 transition-all shadow-xl duration-500 ease-in-out ${activeIndex >= idx && !hideAllAccordions
                     ? "grid-rows-[1fr] opacity-100"
                     : "grid-rows-[0fr] opacity-0"
-                }`}
+                  }`}
               >
                 <div className="overflow-hidden">
-                  <div className="max-w-[450px] bg-white  rounded-md  p-6 text-sm text-black">
+                  <div className="max-w-[450px] bg-white rounded-md  p-6 text-sm text-black">
                     {data.description}
                   </div>
                 </div>
@@ -115,22 +124,22 @@ const AnimationAccroding = () => {
         ))}
 
         {showFinalText && (
-          <div className="text-center">
-            <div className="relative max-w-[450px]  p-3 border-b ">
-              <h1 className="select-none text-xl text-[#28519A]">
-                {dataArr[0].title}
-              </h1>
-            </div>
-            <div
-              className={`grid overflow-hidden text-slate-600 transition-all shadow-xl duration-500 ease-in-out grid-rows-[1fr] opacity-100`}
-            >
-              <div className="overflow-hidden">
-                <div className="max-w-[450px] bg-white  rounded-md  p-6 text-sm text-black">
-                  {dataArr[0].description}
+          <Slider {...sliderSettings}>
+            {dataArr.map((data, idx) => (
+              <div key={idx} className="flex justify-center items-center mb-3">
+                <div className=" bg-white pb-3  border-b">
+                  <h1 className="select-none text-xl text-[#28519A]">{data.title}</h1>
+                </div>
+                <div className={`grid overflow-hidden text-slate-600 transition-all shdow-md duration-500 ease-in-out grid-rows-[1fr] bg-white w-full max-w-[450px]`}>
+                  <div className="overflow-hidden">
+                    <div className="bg-white rounded-md p-6 text-sm text-black -ml-5">
+                      {data.description}
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
+            ))}
+          </Slider>
         )}
       </div>
     </div>

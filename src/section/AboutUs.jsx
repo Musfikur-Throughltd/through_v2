@@ -1,12 +1,14 @@
-import Button from "../components/Button";
+import React, { useState } from "react";
+import Button from "../components/Button"; // Your custom Button component
 import aboutImage from "/about-us.png";
-import icon from "/Frame.png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import AnimationAccroding from "./AnimationAccroding";
 
 const AboutUs = () => {
+  const [showFinalText, setShowFinalText] = useState(false);
+
   // Slider settings for mobile view
   const sliderSettings = {
     dots: true,
@@ -30,57 +32,37 @@ const AboutUs = () => {
   ];
 
   return (
-    <div
-      id="aboutUs"
-      className="max-w-screen-xl mx-auto lg:mb-32 md:mb-32 px-4 sm:px-6 lg:px-0"
-    >
+    <div id="aboutUs" className="max-w-screen-xl mx-auto lg:mb-32 md:mb-32 px-4 sm:px-6 lg:px-0">
       <div className="flex flex-col lg:flex-row md:flex-col justify-between lg:gap-12">
         {/* Text Section (AnimationAccroding) */}
-        <div className="lg:w-1/2 md:w-1/2 lg:ml-12 lg:mt-20">
+        <div className="lg:w-1/2 md:w-1/2 lg:pl-[55px] lg:mt-20">
           <h4 className="text-[#28519A] text-3xl md:text-4xl lg:text-4xl font-semibold mb-3 text-center lg:text-left">
             About Us
           </h4>
-          <h2 className="lg:text-xl md:text-3xl text-xl  mb-8 text-center lg:text-left">
-            <span className="font-semibold">Through LTD </span>- First Ever
-            Performance Driven Company
+          <h2 className="lg:text-xl md:text-3xl text-xl mb-8 text-center lg:text-left">
+            <span className="font-semibold">Through LTD </span>- First Ever Performance Driven Company
           </h2>
-
-          {/* Content Section */}
-          <div className="space-y-5 lg:px-0 md:px-12 px-4 relative">
-            {/* Mobile View Carousel */}
-            <div className="lg:hidden md:hidden">
-              <Slider {...sliderSettings}>
-                {content.map((text, index) => (
-                  <div key={index} className="h-[250px]">
-                    <img className="my-2" src={icon} alt="Icon" />
-                    <p className="text-[#777] text-base leading-[26px]">
-                      {text}
-                    </p>
-                  </div>
-                ))}
-              </Slider>
-            </div>
-
-            {/* Medium and Large Devices Content (Static) */}
-            <div className="hidden lg:block md:block -ml-14">
-              <AnimationAccroding />
-            </div>
+          <div className="-mt-4">
+            <AnimationAccroding setShowFinalTextProp={setShowFinalText} />
           </div>
 
-          {/* Call to Action Button */}
-          <div className="mt-12 text-center lg:text-left">
-            <Button />
+          {/* Button added here */}
+          <div className="mt-12 flex justify-center lg:justify-start">
+            <Button text="Learn More" />
           </div>
         </div>
 
         {/* Image Section */}
-        <div className="lg:w-1/2 md:w-1/2 flex flex-col justify-center items-center mt-16 lg:px-0 md:px-0 px-5 lg:mr-12">
+        <div className="lg:w-1/2 md:w-1/2 flex justify-center items-center ">
           <img
-            className="hidden sm:block w-full h-auto"
             src={aboutImage}
-            alt="About Us"
+            className={`transition-transform duration-1000 ease-in-out ${showFinalText ? "scale-75" : "scale-100 mt-[70px]"}`}
+            alt="about us"
           />
         </div>
+
+
+
       </div>
     </div>
   );
