@@ -26,17 +26,13 @@ const App = () => {
       </h1>
 
       {/* Tracing Beam for Card 1 */}
-      <TracingBeam className="mt-10" isActive={activeIndex === 0}>
+      <TracingBeam className="mt-10">
         <CardSection icon="⭐" title="Card 1" />
-      </TracingBeam>
 
-      {/* Tracing Beam for Card 2 */}
-      <TracingBeam className="mt-10" isActive={activeIndex === 1}>
+        {/* Tracing Beam for Card 2 */}
         <CardSection icon="🌟" title="Card 2" />
-      </TracingBeam>
 
-      {/* Tracing Beam for Card 3 */}
-      <TracingBeam className="mt-10" isActive={activeIndex === 2}>
+        {/* Tracing Beam for Card 3 */}
         <CardSection icon="✨" title="Card 3" />
       </TracingBeam>
     </div>

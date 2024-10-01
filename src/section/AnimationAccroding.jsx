@@ -115,8 +115,21 @@ const AnimationAccroding = () => {
         ))}
 
         {showFinalText && (
-          <div className="mt-5 text-lg font-bold text-blue-500">
-            Hi i am xunaiet faruk i am from raozan
+          <div className="text-center">
+            <div className="relative max-w-[450px]  p-3 border-b ">
+              <h1 className="select-none text-xl text-[#28519A]">
+                {dataArr[0].title}
+              </h1>
+            </div>
+            <div
+              className={`grid overflow-hidden text-slate-600 transition-all shadow-xl duration-500 ease-in-out grid-rows-[1fr] opacity-100`}
+            >
+              <div className="overflow-hidden">
+                <div className="max-w-[450px] bg-white  rounded-md  p-6 text-sm text-black">
+                  {dataArr[0].description}
+                </div>
+              </div>
+            </div>
           </div>
         )}
       </div>
