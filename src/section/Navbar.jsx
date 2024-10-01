@@ -21,7 +21,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="flex items-center justify-between px-4 py-2 max-w-screen-xl mx-auto">
+    <nav className="container flex items-center justify-between px-4 py-2 mx-auto">
       <div className="scale-100 cursor-pointer rounded-2xl px-3 py-2 text-xl font-semibold text-white transition-all duration-200 hover:scale-110">
         <img className="w-[130px]" src={Logo} alt="Logo" />
       </div>

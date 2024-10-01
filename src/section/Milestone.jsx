@@ -29,12 +29,14 @@ const Milestone = () => {
       {/* Heading Section */}
       <div className="space-y-2 mb-8 text-center">
         {/* Title */}
-        <h2 className="text-3xl text-blue-900 font-semibold">Milestones</h2>
-        <div className="text-xl text-gray-900 font-semibold">
-          Tracking Progress and Milestones
+        <div>
+          <span className="text-3xl text-blue-900 font-bold">Milestones</span> -
+          <span className="text-2xl text-gray-900 font-semibold">
+            Tracking Progress and Milestones
+          </span>
         </div>
         {/* Subtitle */}
-        <p className="w-full max-w-3xl text-center text-gray-500 text-lg font-normal leading-7 mb-10">
+        <p className="w-full max-w-3xl text-center text-gray-500 text-xl font-normal leading-7 mb-10">
           Effective progress tracking and milestone setting are critical
           components of any successful project or personal goal. By
           systematically monitoring our achievements.
@@ -65,7 +67,7 @@ const Milestone = () => {
       {/* Milestone Statistics Section for larger screens */}
       <div className="hidden md:flex flex-wrap gap-8 justify-center items-center w-full">
         {/* Years of Experience */}
-        <div className="flex flex-col items-center justify-center gap-2">
+        <div className="flex flex-col items-center justify-center gap-2 hover:bg-slate-100 rounded-lg p-8 transition-all ease-in-out">
           <div className="flex items-center gap-2">
             <div className="text-5xl text-gray-900 font-medium">04</div>
             <div className="text-5xl text-gray-900 font-medium">+</div>
@@ -76,10 +78,10 @@ const Milestone = () => {
         </div>
 
         {/* Separator */}
-        <div className="w-8 h-px bg-slate-400 rotate-90 hidden md:block" />
+        <div className="w-2 h-2 rounded-full bg-slate-400 rotate-90 hidden md:block" />
 
         {/* Total Courses */}
-        <div className="flex flex-col items-center justify-center gap-2">
+        <div className="flex flex-col items-center justify-center gap-2 hover:bg-slate-100 rounded-lg p-8 transition-all ease-in-out">
           <div className="flex items-center gap-2">
             <div className="text-5xl text-gray-900 font-medium">43</div>
             <div className="text-5xl text-gray-900 font-medium">+</div>
@@ -90,9 +92,9 @@ const Milestone = () => {
         </div>
 
         {/* Separator */}
-        <div className="w-8 h-px bg-slate-400 rotate-90 hidden md:block" />
+        <div className="w-2 h-2 rounded-full bg-slate-400 rotate-90 hidden md:block" />
         {/* Satisfied Customers */}
-        <div className="flex flex-col items-center justify-center gap-2">
+        <div className="flex flex-col items-center justify-center gap-2 hover:bg-slate-100 rounded-lg p-8 transition-all ease-in-out">
           <div className="flex items-center gap-2">
             <div className="text-5xl text-gray-900 font-medium">17</div>
             <div className="text-5xl text-gray-900 font-medium">+</div>
@@ -103,9 +105,9 @@ const Milestone = () => {
         </div>
 
         {/* Separator */}
-        <div className="w-8 h-px bg-slate-400 rotate-90 hidden md:block" />
+        <div className="w-2 h-2 rounded-full bg-slate-400 rotate-90 hidden md:block" />
         {/* Projects Done */}
-        <div className="flex flex-col items-center justify-center gap-2">
+        <div className="flex flex-col items-center justify-center gap-2 hover:bg-slate-100 rounded-lg p-8 transition-all ease-in-out">
           <div className="flex items-center gap-2">
             <div className="text-5xl text-gray-900 font-medium">136</div>
             <div className="text-5xl text-gray-900 font-medium">+</div>

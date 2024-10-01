@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import Rectangle1 from "/Rectangle 24.png";
 import Rectangle2 from "/Rectangle 25.png";
 import Rectangle3 from "/Rectangle 26.png";
@@ -27,8 +28,19 @@ const Hero = () => {
     }
   };
 
+  const [index, setIndex] = useState(0);
+  const items = ["Businesses ", "Individuals "];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % items.length);
+    }, 3000); // Change every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [items.length]);
+
   return (
-    <div className="max-w-screen-xl mx-auto mb-20 px-4 sm:px-6 lg:px-8">
+    <div className="container mx-auto mb-20 px-4 sm:px-6 lg:px-8">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         {/* Text Section */}
         <div className="space-y-7 lg:pt-0 md:pt-20 pt-12 text-center lg:text-left">
@@ -37,29 +49,28 @@ const Hero = () => {
             className="text-xl lg:text-4xl md:text-3xl font-semibold leading-normal"
           >
             Advancing{" "}
-            <span className="text-[#28519A]">
-              Businesses and{" "}
-              {/* <span className="lg:inline hidden">
-                {" "}
-                <br />{" "}
-              </span> */}
-              Individuals
+            <span style={{ width: "150px", height: "50px" }}>
+              {items.map(
+                (item, i) =>
+                  index === i && (
+                    <motion.span
+                      key={i}
+                      initial={{ opacity: 0, y: -50 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 20 }}
+                      transition={{ duration: 1 }}
+                      style={{ width: "100%" }}
+                    >
+                      <span className="text-[#28519A]">{item}</span>
+                    </motion.span>
+                  )
+              )}
             </span>{" "}
-            with{" "}
-            {/* <span className="md:inline hidden">
-              {" "}
-              <br />{" "}
-            </span> */}
-            Performance-focused{" "}
-            {/* <span className="md:inline hidden">
-              {" "}
-              <br />{" "}
-            </span> */}
-            solutions.
+            with Performance-focused solutions.
           </h1>
           <p
             style={{ fontFamily: "Sofia Pro" }}
-            className="text-[#777] text-sm sm:text-base lg:w-[460px] md:text-md lg:text-[16px] leading-6"
+            className="text-[#777] text-sm sm:text-base lg:w-[460px] md:text-md lg:text-[18px] leading-6"
           >
             With a focus on excellence and a commitment to customer
             satisfaction, Through Limited is your ultimate partner for success.

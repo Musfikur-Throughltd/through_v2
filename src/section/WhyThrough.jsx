@@ -8,18 +8,18 @@ import watch from "/watch.png";
 
 const WhyThrough = () => {
   return (
-    <div className="max-w-screen-xl mx-auto px-4">
+    <div className="container mx-auto px-4">
       <div className="flex flex-col lg:flex-row gap-12 items-center">
         <div className="flex-1">
           <img
-            className="w-full hidden lg:block lg:w-[485px] mb-6"
+            className="w-full hidden lg:block lg:w-[450px] mb-6"
             src={Frame2}
             alt="Decorative frame"
           />
-          <div className="relative w-full hidden lg:block lg:w-[485px] h-[204px]">
+          <div className="relative w-full hidden lg:block lg:w-[450px] h-[150px]">
             <div className="absolute inset-0 bg-black bg-opacity-60 rounded-[30px]"></div>
             <img
-              className="w-full h-[204px] rounded-[30px] "
+              className="w-full h-[150px] rounded-[30px] "
               src={Frame3}
               alt="Office design with a decorative overlay"
             />

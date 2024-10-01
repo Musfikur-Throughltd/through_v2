@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const clients = [
   { image: "image 7.png", name: "Borderless Clinic" },
-  { image: "image 8.png", name: "IBA Sylhet" },
+  { image: "image 8.png", name: "Army IBA - Sylhet" },
   { image: "image 9.png", name: "Creative Media Ltd." },
   { image: "image 10.png", name: "Borderless Healthcare Group" },
 ];
@@ -49,15 +49,15 @@ const sliderSettings = {
 
 const OurProjects = () => {
   return (
-    <div className="w-full h-full flex flex-col justify-center items-center gap-4 p-4">
+    <div className=" container mx-auto h-full flex flex-col justify-center items-center gap-4 p-4">
       {/* Heading Section */}
       <div className="space-y-2 mb-8 text-center">
         {/* Title */}
-        <h2 className="text-3xl text-blue-900 font-semibold">Our Projects</h2>
-        <div className="text-xl text-gray-900 font-semibold">
-          A Couple of Satisfied Clients
-        </div>
-        <p className="w-full max-w-3xl text-center text-gray-500 text-lg font-normal leading-7 mb-10">
+        <h2 className="text-3xl text-blue-900 font-semibold">
+          Satisfied Clients
+        </h2>
+
+        <p className=" max-w-[740px] text-center text-gray-500 text-xl font-normal leading-7 mb-10">
           Explore the groundbreaking projects powered by Through ED Limited,
           showcasing its remarkable capabilities and transformative impact
           across diverse industries.

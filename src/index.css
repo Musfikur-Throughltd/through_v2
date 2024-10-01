@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Auto-scroll animation for mobile view */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Flex layout for mobile with auto-scroll */
+.auto-scroll {
+  animation: scroll 20s linear infinite;
+  display: flex;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+/* Flex properties for small screens */
+.auto-scroll > div {
+  flex-shrink: 0;
+  width: 16rem; /* Fixed width for cards on mobile */
+}
+
+/* Disable auto-scroll and apply grid on larger screens */
+@media (min-width: 640px) {
+  .auto-scroll {
+    animation: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on small screens */
+  }
+}

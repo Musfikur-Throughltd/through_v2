@@ -25,7 +25,7 @@ const Button = () => {
     <div>
       <button
         onClick={() => setOpenModal(true)}
-        className="flex items-center justify-center gap-2 bg-[#28519A] lg:px-7 lg:py-2 md:px-6 md:py-2 px-3 py-1 text-white rounded-full lg:text-[18px] md:text-[18px] text-[12px] md:ml-[260px] lg:ml-0 ml-36"
+        className="flex items-center justify-center gap-2 bg-[#28519A] lg:px-7 lg:py-2 md:px-6 md:py-2 px-3 py-1 text-white rounded-full lg:text-[18px] md:text-[18px] text-[12px] md:ml-[260px] lg:ml-0 ml-36 group" // Added 'group' for hover effect targeting
       >
         <span className="font-medium">Get a Quote</span>
         <svg
@@ -38,7 +38,7 @@ const Button = () => {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="w-6 h-6 pt-1"
+          className="w-6 h-6 pt-1 transition-transform duration-300 ease-in-out transform group-hover:translate-x-2" // Added transition and transform properties
         >
           <line x1="5" y1="12" x2="19" y2="12"></line>
           <polyline points="12 5 19 12 12 19"></polyline>
@@ -48,7 +48,7 @@ const Button = () => {
       {openModal && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
-          onClick={handleOutsideClick} // Handle backdrop click to close modal
+          onClick={handleOutsideClick}
         >
           <div
             className={`relative overflow-y-auto max-h-screen w-full max-w-4xl bg-white rounded-lg shadow-2xl transform transition-all duration-300 ease-in-out ${
@@ -59,8 +59,6 @@ const Button = () => {
           >
             <main className="relative w-full p-4 sm:p-6 lg:p-8 py-8 text-left">
               {" "}
-              {/* Ensures text alignment to left */}
-              {/* Close button */}
               <button
                 onClick={() => setOpenModal(false)}
                 className="absolute top-4 right-4 text-4xl text-[#28519A] hover:text-red-500"
@@ -68,9 +66,6 @@ const Button = () => {
                 &times;
               </button>
               <div className="mt-12 text-left">
-                {" "}
-                {/* Added text-left here */}
-                {/* Modal content */}
                 <PopUpForm />
               </div>
             </main>

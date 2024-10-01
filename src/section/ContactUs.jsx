@@ -3,14 +3,13 @@ import google from "/logo_google_24.png";
 import insta from "/logo_instagram_24.png";
 import skype from "/logo_skype_24.png";
 import twiter from "/logo_twitter_24.png";
-import map from "/🌎 Map Maker_ Gulshan, Dhaka, ঢাকা, Dhaka, Bangladesh (Standard).png";
 import Location from "/Location.png";
 import gmail from "/gmail (1).png";
 import call from "/call.png";
 
 const ContactUs = () => {
   return (
-    <div id="contact" className="max-w-screen-xl mx-auto mt-10 mb-20 px-4">
+    <div id="contact" className="container mx-auto mt-10 mb-20 px-4">
       <div className="flex flex-col gap-16 lg:flex-row items-center lg:justify-between">
         <div className="flex-1 lg:w-[500px] lg:ml-16 lg:mt-20">
           <h4 className="text-[#28519A] text-3xl md:text-4xl lg:text-4xl font-semibold mb-3 text-center lg:text-start">
@@ -66,20 +65,17 @@ const ContactUs = () => {
             ))}
           </div>
         </div>
-        <div className="flex px-2 map-container">
+        <div className=" px-2 map-container">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.0431906669082!2d90.41431217549555!3d23.78147627864923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7a6d0157951%3A0x9c8da615f3948bee!2s01%20Gulshan%20Ave%2C%20Dhaka%201212!5e0!3m2!1sen!2sbd!4v1726590132732!5m2!1sen!2sbd"
-            width="450"
-            height="400"
+            className=" w-[300px] lg:w-[450px]"
+            height="320"
             style={{ border: 0 }}
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-        {/* <div className="mt-16 lg:mt-26">
-          <img src={map} alt="Map" className="w-full max-w-md h-full" />
-        </div> */}
       </div>
     </div>
   );

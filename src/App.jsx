@@ -1,5 +1,4 @@
 import AboutUs from "./section/AboutUs";
-import AnimationAccroding from "./section/AnimationAccroding";
 import ContactUs from "./section/ContactUs";
 import Footer from "./section/Footer";
 import Hero from "./section/Hero";
@@ -12,7 +11,7 @@ import WhyThrough from "./section/WhyThrough";
 
 export default function App() {
   return (
-    <div>
+    <div className="mx-auto overflow-hidden w-full">
       <Navbar />
       <Hero />
       <AboutUs />
@@ -21,8 +20,12 @@ export default function App() {
       <Milestone />
       <OurProjects />
       <ContactUs />
-      <Newsletter />
-      <Footer />
+      <div className="bg-gray-200 py-20 flex flex-col items-center justify-center">
+        <Newsletter />
+      </div>
+      <div className="bg-[#28519A] text-white w-full">
+        <Footer />
+      </div>
     </div>
   );
 }

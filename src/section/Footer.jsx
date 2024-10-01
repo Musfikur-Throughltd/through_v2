@@ -2,7 +2,7 @@ import Email from "../components/Email";
 
 const Footer = () => {
   return (
-    <div className="bg-[#28519A] text-white">
+    <div>
       {/* Container for footer content */}
       <div className="container py-10 mx-auto px-4 lg:px-0">
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-10">
@@ -45,11 +45,13 @@ const Footer = () => {
           </div>
 
           {/* Newsletter Subscription */}
-          <div className="flex-1 lg:w-1/4 px-4 lg:px-10">
-            <p className="font-semibold text-xl mb-3">Newsletter</p>
-            <div className="bg-white p-1 rounded-md  w-fit">
-              <Email />
+          <div>
+            <div className="flex-1 lg:w-1/4 px-4 lg:px-10">
+              <p className="font-semibold text-xl mb-3">Newsletter</p>
             </div>
+          </div>
+          <div className=" -mt-10">
+            <Email />
           </div>
         </div>
       </div>

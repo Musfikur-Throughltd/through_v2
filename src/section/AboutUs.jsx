@@ -37,13 +37,12 @@ const AboutUs = () => {
       <div className="flex flex-col lg:flex-row md:flex-col justify-between lg:gap-12">
         {/* Text Section (AnimationAccroding) */}
         <div className="lg:w-1/2 md:w-1/2 lg:ml-12 lg:mt-20">
-          <h4 className="text-[#28519A] text-3xl md:text-4xl lg:text-3xl font-semibold mb-3 text-center lg:text-left">
+          <h4 className="text-[#28519A] text-3xl md:text-4xl lg:text-4xl font-semibold mb-3 text-center lg:text-left">
             About Us
           </h4>
-          <h2 className="lg:text-4xl md:text-3xl text-xl font-semibold mb-8 text-center lg:text-left">
-            First Ever Performance
-            <br className="hidden sm:block" />
-            Driven Company
+          <h2 className="lg:text-xl md:text-3xl text-xl  mb-8 text-center lg:text-left">
+            <span className="font-semibold">Through LTD </span>- First Ever
+            Performance Driven Company
           </h2>
 
           {/* Content Section */}
